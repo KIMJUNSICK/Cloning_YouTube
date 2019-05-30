@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 const app = express();
 
 const PORT = 4000;
@@ -14,6 +14,7 @@ const handleHome = (req, res) => {
 const handleProfile = (req, res) => {
   res.send("here comes the sun!!");
 };
+
 app.get("/", handleHome);
 
 app.get("/profile", handleProfile);
