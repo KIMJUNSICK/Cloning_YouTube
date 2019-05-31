@@ -4,17 +4,11 @@ import helmet from "helmet";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
-import { userRouter } from "./router";
+import globalRouter from "./routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
 
 const app = express();
-
-const handleHome = (req, res) => {
-  res.send("hello, junsik");
-};
-
-const handleProfile = (req, res) => {
-  res.send("here comes the sun!!");
-};
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -22,10 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.get("/", handleHome);
-
-app.get("/profile", handleProfile);
-
-app.use("/user", userRouter);
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
 export default app;
