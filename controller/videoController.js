@@ -1,4 +1,4 @@
-export const home = (req, res) => res.send("here comes the Sun!!");
+export const home = (req, res) => res.render("home");
 export const serach = (req, res) => res.send("here, Search");
 
 export const upload = (req, res) => res.send("here, Upload");
