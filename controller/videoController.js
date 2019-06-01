@@ -1,5 +1,11 @@
 export const home = (req, res) => res.render("home", { pageTitle: "Home" });
-export const serach = (req, res) => res.render("join", { pageTitle: "Search" });
+
+export const serach = (req, res) => {
+  const {
+    query: { SomethingYouWant: something }
+  } = req;
+  res.render("search", { pageTitle: "Search", something });
+};
 
 export const upload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
