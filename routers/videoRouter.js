@@ -2,7 +2,6 @@ import express from "express";
 import routes from "../routes";
 import {
   upload,
-  videos,
   videoDetail,
   editVideo,
   deleteVideo

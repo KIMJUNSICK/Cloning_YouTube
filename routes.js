@@ -8,7 +8,7 @@ const SERACH = "/search";
 //User
 const USERS = "/users";
 const USER_DETAIL = "/:id";
-const EDIT_DETAIL = "/edit-profile";
+const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
 //Videos
@@ -26,7 +26,7 @@ const routes = {
   search: SERACH,
   users: USERS,
   userDetail: USER_DETAIL,
-  editDetail: EDIT_DETAIL,
+  editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,

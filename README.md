@@ -5,8 +5,8 @@ Cloning youTubu with vanillaJS and nodeJS
 ## Pages :
 
 - [ ] Home
-- [ ] Join
-- [ ] Login
+- [x] Join
+- [x] Login
 - [x] Serach
 - [ ] User Detail
 - [ ] Edit Profile
