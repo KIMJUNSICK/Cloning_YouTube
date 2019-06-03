@@ -4,16 +4,16 @@ Cloning youTubu with vanillaJS and nodeJS
 
 ## Pages :
 
-- [ ] Home
+- [x] Home
 - [x] Join
 - [x] Login
 - [x] Serach
 - [ ] User Detail
 - [ ] Edit Profile
-- [ ] Change Password
-- [ ] Upload
+- [x] Change Password
+- [x] Upload
 - [ ] Video Detail
-- [ ] Edit Video
+- [x] Edit Video
 
 
 
