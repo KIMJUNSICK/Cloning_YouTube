@@ -17,7 +17,7 @@ export const videos = [
     title: "Video awesome!",
     description: "i like weTube",
     views: 214,
-    videoFile: "http://www.pandora.tv/view/songtoyup/53231742/embed",
+    videoFile: "https://www.youtube.com/embed/Nc5peC_g-mg",
     creator: {
       id: 121995,
       name: "junsik",

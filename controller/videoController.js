@@ -7,7 +7,7 @@ export const serach = (req, res) => {
   const {
     query: { SomethingYouWant: something }
   } = req;
-  res.render("search", { pageTitle: "Search", something });
+  res.render("search", { pageTitle: "Search", something, videos });
 };
 
 export const upload = (req, res) =>
