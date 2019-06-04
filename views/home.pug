@@ -5,6 +5,7 @@ block content
     .videos
        each tomato in videos
         +videoBlock({
+            id:tomato.id,
             title:tomato.title,
             views:tomato.views,
             videoFile:tomato.videoFile
