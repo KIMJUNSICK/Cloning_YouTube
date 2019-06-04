@@ -21,12 +21,18 @@ export const serach = (req, res) => {
 export const getUpLoad = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 
-export const postUpLoad = (req, res) => {
+export const postUpLoad = async (req, res) => {
   const {
-    body: { file, title, description }
+    body: { title, description },
+    file: { path }
   } = req;
-  // To Do: Upload and save video
-  res.redirect(routes.videoDetail(123456));
+  const newVideo = await Video.create({
+    fileUrl: path,
+    title,
+    description
+  });
+  console.log(newVideo);
+  res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = (req, res) =>
