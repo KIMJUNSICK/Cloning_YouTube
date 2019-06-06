@@ -85,5 +85,6 @@ typings/
 .fusebox/
 package-lock.json
 uploads
+yarn.lock
 # DynamoDB Local files
 .dynamodb/

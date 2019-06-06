@@ -3,10 +3,9 @@ import Video from "../models/Video";
 
 export const home = async (req, res) => {
   try {
-    const videos = await Video.find({});
+    const videos = await Video.find({}).sort({ _id: -1 });
     res.render("home", { pageTitle: "Home", videos });
   } catch (error) {
-    console.log(error);
     res.render("home", { pageTitle: "Home", videos: [] });
   }
 };
@@ -15,7 +14,7 @@ export const serach = (req, res) => {
   const {
     query: { SomethingYouWant: something }
   } = req;
-  res.render("search", { pageTitle: "Search", something, videos });
+  res.render("search", { pageTitle: "Search", something });
 };
 
 export const getUpLoad = (req, res) =>
@@ -42,8 +41,7 @@ export const videoDetail = async (req, res) => {
     const video = await Video.findById(id);
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
-    console.log(error);
-    res.redirect(route.home);
+    res.redirect(routes.home);
   }
 };
 
@@ -78,6 +76,8 @@ export const deleteVideo = async (req, res) => {
   } = req;
   try {
     await Video.findOneAndDelete({ _id: id });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
   res.redirect(routes.home);
 };
