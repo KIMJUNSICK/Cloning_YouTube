@@ -10,11 +10,17 @@ export const home = async (req, res) => {
   }
 };
 
-export const serach = (req, res) => {
+export const serach = async (req, res) => {
   const {
     query: { SomethingYouWant: something }
   } = req;
-  res.render("search", { pageTitle: "Search", something });
+  let videos = [];
+  try {
+    videos = await Video.find({ title: { $regex: something, $options: "i" } });
+  } catch (error) {
+    console.log(error);
+  }
+  res.render("search", { pageTitle: "Search", something, videos });
 };
 
 export const getUpLoad = (req, res) =>

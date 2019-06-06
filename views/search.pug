@@ -5,9 +5,13 @@ block content
     .search__header
         h3 Something you want : #{something}
     .search__videos
+        if videos.length === 0
+            h4 No Videos Found
+
         each tomato in videos
             +videoBlock({
             title:tomato.title,
             views:tomato.views,
-            videoFile:tomato.videoFile
+            videoFile:tomato.videoFile,
+            id : tomato.id
         })
