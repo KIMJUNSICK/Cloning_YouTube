@@ -1,5 +1,5 @@
 @import "config/_variables.scss";
+@import "config/main.scss";
+@import "config/reset.scss";
 
-body {
-  background-color: $junsikColor;
-}
+@import "partials/header.scss";
