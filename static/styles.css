@@ -142,6 +142,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  all: unset;
+  cursor: pointer; }
+
+*,
+input {
+  box-sizing: border-box; }
+
+input {
+  border: none;
+  box-sizing: border-box; }
+  input:focus, input:active {
+    outline: none; }
+
 .header {
   background-color: #ea232c;
   margin-bottom: 50px;
@@ -162,14 +176,20 @@ table {
       justify-self: end; }
     .header .header__wrapper .header__column ul {
       display: flex;
-      font-weight: 600; }
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase; }
       .header .header__wrapper .header__column ul li:not(:last-child) {
         margin-right: 15px; }
-      .header .header__wrapper .header__column ul li a {
-        text-decoration: none;
-        color: white; }
     .header .header__wrapper .header__column form {
       width: 100%; }
       .header .header__wrapper .header__column form input {
         padding: 10px 10px;
-        width: 100%; }
+        width: 100%;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #444444;
+        font-weight: 600; }
+        .header .header__wrapper .header__column form input::placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }

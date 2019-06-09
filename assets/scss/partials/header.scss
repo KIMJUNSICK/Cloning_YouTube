@@ -24,14 +24,10 @@
       ul {
         display: flex;
         font-weight: 600;
+        color: white;
+        text-transform: uppercase;
         li:not(:last-child) {
           margin-right: 15px;
-        }
-        li {
-          a {
-            text-decoration: none;
-            color: white;
-          }
         }
       }
       form {
@@ -39,6 +35,14 @@
         input {
           padding: 10px 10px;
           width: 100%;
+          border-radius: 5px;
+          font-size: 14px;
+          color: $black;
+          font-weight: 600;
+          &::placeholder {
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.7);
+          }
         }
       }
     }
