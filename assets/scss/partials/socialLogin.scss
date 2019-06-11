@@ -21,8 +21,20 @@
     background-color: $black;
     color: white;
   }
-  .social-login__facebook {
-    background-color: $black;
+  .social-login__instagram {
+    background: linear-gradient(
+      45deg,
+      #ffdc80,
+      #fcaf45,
+      #f77737,
+      #f56040,
+      #f56040,
+      #e1306c,
+      #c13584,
+      #833ab4,
+      #5851db,
+      #405de6
+    );
     color: white;
   }
 }

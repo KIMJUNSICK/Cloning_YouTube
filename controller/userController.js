@@ -66,6 +66,35 @@ export const postGithubLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
+export const instagramLogin = passport.authenticate("instagram");
+
+export const instagramLoginCallback = async (_, __, profile, cb) => {
+  const {
+    _json: { id, avatar_url: avatarUrl, full_name: name, email }
+  } = profile;
+  try {
+    const user = await User.findOne({ email });
+    if (user) {
+      user.instagramId = id;
+      user.save();
+      return cb(null, user);
+    }
+    const newUser = await User.create({
+      email,
+      name,
+      instagramId: id,
+      avatarUrl
+    });
+    return cb(null, newUser);
+  } catch (error) {
+    cb(error);
+  }
+};
+
+export const postInstagramLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const logout = (req, res) => {
   req.logout();
   res.redirect(routes.home);

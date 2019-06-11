@@ -10,7 +10,9 @@ import {
   logout,
   githubLogin,
   postGithubLogin,
-  getMe
+  getMe,
+  instagramLogin,
+  postInstagramLogin
 } from "../controller/userController";
 import { onlyPublic, onlyPrivate } from "../middlewares";
 
@@ -31,6 +33,13 @@ globalRouter.get(
   routes.githubCallback,
   passport.authenticate("github", { failureRedirect: "/login" }),
   postGithubLogin
+);
+
+globalRouter.get(routes.instagram, instagramLogin);
+globalRouter.get(
+  routes.instagramCallback,
+  passport.authenticate("instagram", { failureRedirect: "/login" }),
+  postInstagramLogin
 );
 
 globalRouter.get(routes.me, getMe);

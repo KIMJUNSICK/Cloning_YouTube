@@ -23,10 +23,16 @@ const DELETE_VIDEO = "/:id/delete";
 const GITHUB = "/auth/github";
 const GITHUBCALLBACK = "/auth/github/callback";
 
+// Instargram
+const INSTAGRAM = "/auth/instagram";
+const INSTAGRAM_CALLBACK = "/auth/instagram/callback";
+
 const routes = {
   me: ME,
   github: GITHUB,
   githubCallback: GITHUBCALLBACK,
+  instagram: INSTAGRAM,
+  instagramCallback: INSTAGRAM_CALLBACK,
   home: HOME,
   join: JOIN,
   login: LOGIN,
