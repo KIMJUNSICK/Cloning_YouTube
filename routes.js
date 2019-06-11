@@ -10,6 +10,7 @@ const USERS = "/users";
 const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
+const ME = "/me";
 
 //Videos
 const VIDEOS = "/videos";
@@ -23,6 +24,7 @@ const GITHUB = "/auth/github";
 const GITHUBCALLBACK = "/auth/github/callback";
 
 const routes = {
+  me: ME,
   github: GITHUB,
   githubCallback: GITHUBCALLBACK,
   home: HOME,
