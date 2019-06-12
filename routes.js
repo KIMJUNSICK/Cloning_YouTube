@@ -23,7 +23,7 @@ const DELETE_VIDEO = "/:id/delete";
 const GITHUB = "/auth/github";
 const GITHUBCALLBACK = "/auth/github/callback";
 
-// Instargram
+// Instagram
 const INSTAGRAM = "/auth/instagram";
 const INSTAGRAM_CALLBACK = "/auth/instagram/callback";
 

@@ -43,6 +43,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
   const {
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
+  console.log(profile);
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -53,12 +54,12 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
     const newUser = await User.create({
       email,
       name,
-      githunId: id,
-      avatarUrl
+      avatarUrl,
+      githubId: id
     });
     return cb(null, newUser);
   } catch (error) {
-    cb(error);
+    return cb(error);
   }
 };
 
@@ -72,6 +73,7 @@ export const instagramLoginCallback = async (_, __, profile, cb) => {
   const {
     _json: { id, avatar_url: avatarUrl, full_name: name, email }
   } = profile;
+  console.log(avatarUrl);
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -87,7 +89,7 @@ export const instagramLoginCallback = async (_, __, profile, cb) => {
     });
     return cb(null, newUser);
   } catch (error) {
-    cb(error);
+    return cb(error);
   }
 };
 
