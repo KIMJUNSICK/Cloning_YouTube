@@ -339,6 +339,8 @@ input {
     .video-detail__container .video__info button {
       width: 100%;
       margin-bottom: 25px; }
+    .video-detail__container .video__info .video__author a {
+      color: #3498db; }
     .video-detail__container .video__info .video__title,
     .video-detail__container .video__info .video__views,
     .video-detail__container .video__info .video__description {
@@ -365,13 +367,14 @@ input {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 18px; }
+    margin-bottom: 50px; }
     .user-profile .user-profile__header .profile__username {
       font-size: 18px;
       margin-top: 15px; }
   .user-profile .user-profile__btns {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 50px; }
     .user-profile .user-profile__btns a:not(:last-child) {
       margin-bottom: 20px; }
