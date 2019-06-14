@@ -1,6 +1,6 @@
 extends layouts/main
 
-block content  
+block content
     .form-container
         form(action=`/users${routes.editProfile}`, method="post")
             .fileUpload
@@ -8,5 +8,4 @@ block content
                 input(type="file", id="avatar", name="avatar")
             input(type="text", placeholder="Name", name="name")
             input(type="email", placeholder="Email", name="email")
-            input(type="submit", value="Update Profile")
-      
+            input(type="submit", value="Update Profile")          
