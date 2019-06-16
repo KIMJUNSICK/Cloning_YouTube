@@ -68,7 +68,7 @@ const formatDate = seconds => {
 };
 
 const getCurrentTime = () => {
-  currentTime.innerHTML = formatDate(videoPlayer.currentTime);
+  currentTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
 };
 
 const setTotalTime = () => {
@@ -77,12 +77,18 @@ const setTotalTime = () => {
   setInterval(getCurrentTime, 1000);
 };
 
+const handleEnd = () => {
+  videoPlayer.currentTime = 0;
+  playBtn.innerHTML = '<i class="fas fa-play"></i>';
+};
+
 const init = () => {
   videoPlayer = videoContainer.querySelector("video");
   playBtn.addEventListener("click", handlePlay);
   volumeBtn.addEventListener("click", handleVolume);
   ScreenBtn.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  videoPlayer.addEventListener("ended", handleEnd);
 };
 
 if (videoContainer) {
