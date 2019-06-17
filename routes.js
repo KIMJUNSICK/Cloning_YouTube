@@ -27,7 +27,13 @@ const GITHUBCALLBACK = "/auth/github/callback";
 const INSTAGRAM = "/auth/instagram";
 const INSTAGRAM_CALLBACK = "/auth/instagram/callback";
 
+// API
+const API = "/api";
+const REGISTER_VIEW = "/:id/view";
+
 const routes = {
+  api: API,
+  registerView: REGISTER_VIEW,
   me: ME,
   github: GITHUB,
   githubCallback: GITHUBCALLBACK,

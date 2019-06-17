@@ -12,8 +12,11 @@ block content
                 a(href=routes.editVideo(video.id)) 
                     button Edit Video
             h5.video__title=video.title
-            span.video__views=video.views
             p.video__description=video.description
+            if video.view === 1
+                span.video__views 1 view
+            else 
+                span.video__views #{video.views} views
             .video__author  
                 |Uploaded by 
                 a(href=routes.userDetail(video.creator.id))=video.creator.name
