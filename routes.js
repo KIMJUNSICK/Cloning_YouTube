@@ -30,10 +30,12 @@ const INSTAGRAM_CALLBACK = "/auth/instagram/callback";
 // API
 const API = "/api";
 const REGISTER_VIEW = "/:id/view";
+const ADD_COMNENT = "/:id/comment";
 
 const routes = {
   api: API,
   registerView: REGISTER_VIEW,
+  addComment: ADD_COMNENT,
   me: ME,
   github: GITHUB,
   githubCallback: GITHUBCALLBACK,
