@@ -50,7 +50,8 @@ export const videoDetail = async (req, res) => {
   try {
     const video = await Video.findById(id)
       .populate("creator")
-      .populate("comments");
+      .populate("comments")
+      .populate();
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     res.redirect(routes.home);
@@ -139,6 +140,33 @@ export const postAddComment = async (req, res) => {
     video.save();
   } catch (error) {
     res.status(400);
+  } finally {
+    res.end();
+  }
+};
+
+export const postRemoveComment = async (req, res) => {
+  const {
+    params: { id, commentId },
+    user
+  } = req;
+  try {
+    const video = await Video.findById(id).populate("comments");
+    const comment = await Comment.findById(commentId);
+    console.log(comment, "*****", comment.creator, user.id);
+    if (String(comment.creator) !== user.id) {
+      throw "Comment can be deleted only Writer!";
+      return;
+    }
+    await video.comments.pull(commentId);
+    video.save();
+    await Comment.findByIdAndDelete(commentId);
+    res.status(200);
+    res.send("done!");
+  } catch (error) {
+    console.log(error);
+    res.status(400);
+    res.send(JSON.stringify({ error }));
   } finally {
     res.end();
   }

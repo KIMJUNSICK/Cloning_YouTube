@@ -56,6 +56,12 @@
         &:not(:last-child) {
           margin-bottom: 15px;
         }
+        .comment__delete-id {
+          display: none;
+        }
+        i {
+          margin-left: 5px;
+        }
       }
     }
   }

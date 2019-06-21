@@ -437,6 +437,10 @@ input {
         border-bottom-left-radius: 0px; }
         .video-detail__container .video__comments .video__comments-list li:not(:last-child) {
           margin-bottom: 15px; }
+        .video-detail__container .video__comments .video__comments-list li .comment__delete-id {
+          display: none; }
+        .video-detail__container .video__comments .video__comments-list li i {
+          margin-left: 5px; }
 
 .user-profile {
   width: 100%;

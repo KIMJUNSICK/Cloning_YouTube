@@ -30,12 +30,14 @@ const INSTAGRAM_CALLBACK = "/auth/instagram/callback";
 // API
 const API = "/api";
 const REGISTER_VIEW = "/:id/view";
-const ADD_COMNENT = "/:id/comment";
+const ADD_COMMENT = "/:id/comment";
+const REMOVE_COMMENT = "/:id/comment/:commentId/remove";
 
 const routes = {
   api: API,
   registerView: REGISTER_VIEW,
-  addComment: ADD_COMNENT,
+  addComment: ADD_COMMENT,
+  removeComment: REMOVE_COMMENT,
   me: ME,
   github: GITHUB,
   githubCallback: GITHUBCALLBACK,

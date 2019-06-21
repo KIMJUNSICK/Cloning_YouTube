@@ -3,6 +3,37 @@ import axios from "axios";
 const addCommentForm = document.getElementById("jsAddComment");
 const commentList = document.getElementById("jsCommentList");
 const commentNumber = document.getElementById("jsCommentNumber");
+const myCommentList = document.querySelectorAll("#jsMyComment");
+const videoId = window.location.href.split("/videos/")[1];
+
+const ID_MYCOMMENT_REMOVE = "myComment_remove";
+
+const decreaseNumber = () => {
+  commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10) - 1;
+};
+const handleRemoveComment = async event => {
+  const myComment = event.target.parentNode;
+  const commentId = myComment.children[1].innerHTML;
+  // myComment.parentNode.setAttribute("id", ID_MYCOMMENT_REMOVE);
+
+  if (!commentId) {
+    return;
+  }
+
+  const response = await axios({
+    url: `/api/${videoId}/comment/${commentId}/remove`,
+    method: "POST",
+    commentId
+  });
+
+  if (response.status === 200) {
+    decreaseNumber();
+    myComment.parentNode.remove();
+    console.log("Misson Complete");
+  }
+};
+
+// Add Comment
 
 const increaseNumber = () => {
   commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10) + 1;
@@ -18,7 +49,6 @@ const addComment = comment => {
 };
 
 const sendComment = async comment => {
-  const videoId = window.location.href.split("/videos/")[1];
   const response = await axios({
     url: `/api/${videoId}/comment`,
     method: "POST",
@@ -41,6 +71,9 @@ const handleSubmit = event => {
 
 const init = () => {
   addCommentForm.addEventListener("submit", handleSubmit);
+  for (let i = 0; i < myCommentList.length; i += 1) {
+    myCommentList[i].addEventListener("click", handleRemoveComment);
+  }
 };
 
 if (addCommentForm) {
